@@ -69,8 +69,8 @@ pkg_setup() {
 	fi
 
 	use amd64 && export ABI=x86
-	use amd64 && append-flags -L/emul/linux/x86/lib -L/emul/linux/x86/usr/lib -L/usr/lib32 
-	
+	use amd64 && append-flags -L/emul/linux/x86/lib -L/emul/linux/x86/usr/lib -L/usr/lib32
+
 	_prefix="/usr/local"
 	_bindir="/usr/local/bin"
 	_libdir="/usr/$(get_libdir)" # either lib or lib32
