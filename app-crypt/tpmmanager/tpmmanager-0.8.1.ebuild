@@ -5,6 +5,7 @@
 EAPI="2"
 
 # inherit qt4-build
+inherit eutils
 
 HOMEPAGE="http://projects.sirrix.com/trac/tpmmanager"
 SRC_URI="mirror://sourceforge/tpmmanager/${P}.tar.gz
@@ -23,6 +24,12 @@ DEPEND=">=app-crypt/trousers-0.3.0
 	dev-libs/openssl"
 RDEPEND="${DEPEND}"
 
+src_unpack(){
+	unpack ${A}
+	cd "${S}"/src
+	epatch "${FILESDIR}"/nix-1.patch
+	cd ../
+}
 src_prepare() {
 	qmake || die "qmake"
 }

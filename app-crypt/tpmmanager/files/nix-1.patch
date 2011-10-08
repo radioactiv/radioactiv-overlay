@@ -1,0 +1,11 @@
+--- TPMManager.cxx Mon Mar 17 14:58:22 1997
++++ TPMManager.cxx Mon Mar 17 14:58:22 1997
+@@ -409,7 +409,7 @@
+ 
+ void TPM_Manager::slotProcessURL( const QString& url )
+ {
+-	QUrl myURL = QUrl::QUrl(url, QUrl::StrictMode);
++	QUrl myURL = QUrl(url, QUrl::StrictMode);
+ 	if ( !( QDesktopServices::openUrl(myURL) ) )
+ 		QMessageBox::critical( this, "Error: Opening a URL", "Could not open your favourite browser. " );
+ }
