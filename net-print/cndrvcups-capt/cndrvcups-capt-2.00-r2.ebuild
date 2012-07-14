@@ -1,8 +1,5 @@
-# Copyright 1999-2006 Gentoo Foundation
-# Distributed under the terms of the GNU General Public License v2
-# $Header: $ ver 1.1
-
 inherit multilib eutils versionator
+EAPI="2"
 MY_PF=${PF/-r2/-2}
 S=${WORKDIR}/${PN}-$(get_version_component_range 1-2)
 DESCRIPTION="Canon CUPS Capt driver"
@@ -13,7 +10,6 @@ RESTRICT="mirror"
 SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE="gtk"
-EAPI="2"
 
 DEPEND="=net-print/cndrvcups-common-2.00-r2
 		>=net-print/cups-1.1.17"
